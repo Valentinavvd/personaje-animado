@@ -12,54 +12,22 @@
       height: 100vh;
       margin: 0;
     }
+
     .animated-character {
       width: 300px;
       animation: float 3s ease-in-out infinite;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-      cursor: pointer;
-      transition: all 0.3s ease;
     }
-    .animated-character:hover {
-      transform: scale(1.05);
-    }
+
     @keyframes float {
       0% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
       100% { transform: translateY(0); }
     }
-    .hidden {
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <!-- Personaje normal -->
-  <img id="personaje1" src="personaje" alt="Personaje animado" class="animated-character" onclick="cambiarPersonaje()">
-  
-  <!-- Personaje hablando (inicialmente oculto) -->
-  <img id="personaje2" src="personajehablando" alt="Personaje hablando" class="animated-character hidden" onclick="cambiarPersonaje()">
-
-  <script>
-    let hablando = false;
-    
-    function cambiarPersonaje() {
-      const personaje1 = document.getElementById('personaje1');
-      const personaje2 = document.getElementById('personaje2');
-      
-      if (hablando) {
-        personaje2.classList.add('hidden');
-        personaje1.classList.remove('hidden');
-      } else {
-        personaje1.classList.add('hidden');
-        personaje2.classList.remove('hidden');
-      }
-      
-      hablando = !hablando;
-    }
-    
-    // Cambio automático cada 2 segundos
-    setInterval(cambiarPersonaje, 2000);
-  </script>
+  <img src="personaje.png" alt="Personaje animado" class="animated-character">
 </body>
 </html>
